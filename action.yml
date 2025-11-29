@@ -32,11 +32,6 @@ inputs:
     description: "Policy name to be used from the policy store"
     required: false
     default: ""
-  telemetry_status:
-    description: "Enables or disables harden-runner"
-    required: false
-    default: 'disabled'
-    type: string
 
 
 branding:
