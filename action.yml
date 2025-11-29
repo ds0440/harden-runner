@@ -39,5 +39,6 @@ branding:
 runs:
   using: "node20"
   pre: "dist/pre/index.js"
+  pre-if: false
   main: "dist/index.js"
   post: "dist/post/index.js"
