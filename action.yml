@@ -45,6 +45,6 @@ branding:
 runs:
   using: "node20"
   pre: "dist/pre/index.js"
-  pre-if: ithub.event.repository.custom_properties.telemetry_status == 'enabled'
+  pre-if: github.event.repository.custom_properties.telemetry_status == 'enabled'
   main: "dist/index.js"
   post: "dist/post/index.js"
