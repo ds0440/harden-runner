@@ -45,6 +45,6 @@ branding:
 runs:
   using: "node20"
   pre: "dist/pre/index.js"
-  pre-if: github.event.repository.custom_properties.telemetry_status  == "enabled" && runner.os == "Linux" && runner.environment == "github-hosted" 
+  pre-if: github.event.repository.custom_properties.telemetry_status  == 'enabled' && runner.os == 'Linux' && runner.environment == 'github-hosted'
   main: "dist/index.js"
   post: "dist/post/index.js"
