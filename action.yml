@@ -32,11 +32,11 @@ inputs:
     description: "Policy name to be used from the policy store"
     required: false
     default: ""
-  telemetry_enabled:
+  telemetry_status:
     description: "Enables or disables harden-runner"
     required: false
-    default: true
-    type: boolean
+    default: 'enabled'
+    type: string
 
 
 branding:
@@ -45,6 +45,6 @@ branding:
 runs:
   using: "node20"
   pre: "dist/pre/index.js"
-  pre-if: inputs.telemetry_enabled
+  pre-if: inputs.telemetry_status == 'enabled'
   main: "dist/index.js"
   post: "dist/post/index.js"
