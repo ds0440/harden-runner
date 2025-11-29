@@ -32,10 +32,10 @@ inputs:
     description: "Policy name to be used from the policy store"
     required: false
     default: ""
-  skip_telemetry:
-    description: "Skips runner telemetry collection"
+  telemetry_status:
+    description: "Defines telemetry status"
     required: false
-    default: 'false'
+    default: 'enabled'
     type: string
 
 
@@ -45,6 +45,6 @@ branding:
 runs:
   using: "node20"
   pre: "dist/pre/index.js"
-  pre-if: github.event.repository.custom_properties.telemetry_status == 'enabled'
+  pre-if: inputs.telemetry_status == 'enabled'
   main: "dist/index.js"
   post: "dist/post/index.js"
