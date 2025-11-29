@@ -32,6 +32,12 @@ inputs:
     description: "Policy name to be used from the policy store"
     required: false
     default: ""
+  skip_telemetry:
+    description: "Skips runner telemetry collection"
+    required: false
+    default: 'false'
+    type: string
+
 
 branding:
   icon: "check-square"
@@ -39,6 +45,6 @@ branding:
 runs:
   using: "node20"
   pre: "dist/pre/index.js"
-  pre-if: true
+  pre-if: inputs.skip_telemetry == 'false'
   main: "dist/index.js"
   post: "dist/post/index.js"
