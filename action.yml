@@ -35,7 +35,7 @@ inputs:
   telemetry_status:
     description: "Enables or disables harden-runner"
     required: false
-    default: 'enabled'
+    default: 'disabled'
     type: string
 
 
